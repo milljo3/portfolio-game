@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardTitle, CardContent, CardFooter, CardDescription } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardFooter, CardDescription } from "@/components/ui/card";
 import type { Project } from "@/data/projects";
 import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
