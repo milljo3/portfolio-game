@@ -13,11 +13,11 @@ export default function ProjectPage() {
     <div className="w-full pt-16">
       {/* Banner Image */}
       {project.banner && (
-        <div className="w-full h-64 md:h-80 overflow-hidden relative">
+        <div className="w-full h-64 md:h-80 overflow-hidden relative bg-black/50">
           <img 
             src={project.banner} 
             alt={`${project.title} banner`}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain md:object-cover"
           />
         </div>
       )}
