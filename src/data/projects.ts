@@ -57,21 +57,19 @@ export const projectPromotionData: Project = {
 
     cardDescription: "A turn-based tactical RPG where unionized employees fight through a dystopian corporate tower to reclaim their dignity and earn the ultimate promotion: freedom.",
     
-    description: "Project Promotion is a strategic turn-based RPG set in a dystopian corporate hellscape. Players lead a group of newly unionized employees fighting their way through a multi-level office tower to confront the CEO. Inspired by Final Fantasy X's combat system, the game features dynamic turn-order manipulation, character progression, and workplace-themed mechanics where water coolers heal and printers become weapons. As a gameplay programmer joining mid-development, I was responsible for implementing the core combat systems including character stats, status effects, and ability mechanics that bring this corporate satire to life.",
+    description: "Project Promotion is a strategic turn-based RPG set in a dystopian corporate hellscape. Players lead a group of newly unionized employees fighting their way through a multi-level office tower to confront the CEO. Inspired by Final Fantasy X's combat system, the game features dynamic turn-order manipulation, character progression, and workplace-themed mechanics where water coolers heal and printers become weapons. As a gameplay programmer joining production, I was responsible for implementing the core combat systems including character stats, status effects, and ability mechanics that bring this corporate satire to life.",
 
     myRole: "Gameplay Programmer",
     targetAudience: "Strategy RPG fans and players who enjoy tactical turn-based combat with satirical themes",
     projectGoals: [
         "Create a playable snapshot showcasing core combat mechanics without lengthy tutorials",
         "Implement a flexible, extensible system for status effects and abilities",
-        "Integrate gameplay code seamlessly with existing codebase and team systems",
         "Design character progression that encourages tactical experimentation"
     ],
     outcomes: [
         "Successfully launched playable build on itch.io",
         "Implemented extensible status effect system supporting 6+ unique effects",
-        "Created component-based architecture enabling rapid ability prototyping",
-        "Achieved smooth integration with existing combat and UI systems"
+        "Created component-based architecture enabling rapid ability prototyping"
     ],
 
     timeline: "3.5 months (August - December 2025)",
@@ -81,10 +79,9 @@ export const projectPromotionData: Project = {
     personalContributions: [
         "Designed and implemented the entire status effect system using Unity's ScriptableObject architecture, supporting buffs, debuffs, and damage-over-time effects with designer-friendly workflows",
         "Created component-based StatusEffectManager enabling modular attachment to any character",
-        "Built ability execution system using C# events and callbacks for seamless UI integration",
-        "Implemented CharacterHP system with event-driven damage/healing for flexible combat interactions",
         "Collaborated with designer to rapidly prototype and iterate on new abilities and status effects",
-        "Integrated gameplay systems with existing turn order, UI, and combat managers"
+        "Built ability execution system using C# events and callbacks for seamless UI integration",
+        "Implemented CharacterHP system with event-driven damage/healing for flexible combat interactions"
     ],
     teamContext: "I joined the team mid-development as one of three programmers, working alongside 4 artists, 1 designer, 1 producer, and 1 sound designer. I focused specifically on gameplay systems while other programmers handled combat flow, UI, and enemy AI. I worked closely with the designer to implement new features and ensure mechanical balance.",
     
@@ -92,17 +89,17 @@ export const projectPromotionData: Project = {
         {
             problem: "Joining mid-development with an established codebase - needed to quickly understand existing architecture while implementing new systems that wouldn't conflict with or break existing functionality",
             solution: "Spent initial weeks analyzing the codebase structure and existing patterns. Adopted component-based architecture matching the team's approach. Held regular code review sessions with other programmers to ensure integration points were clear. Used Unity's RequireComponent attribute to enforce dependencies and prevent runtime errors.",
-            impact: "Successfully integrated all new gameplay systems without breaking existing features. Component-based approach enabled other team members to easily attach and configure status effects. Reduced integration bugs by 80% compared to early prototypes through careful architectural planning.",
+            impact: "Successfully integrated all new gameplay systems without breaking existing features. Component-based approach enabled other team members to easily attach and configure status effects.",
             images: []
         },
         {
             problem: "Status effects needed to support diverse behaviors (damage-over-time, stat modifications, removal triggers) while remaining designer-friendly and performant",
             solution: "Leveraged Unity's ScriptableObject system to create data-driven status effects that could be authored directly in the Unity Inspector. Each effect is a reusable asset that can be configured without code changes. Implemented lifecycle methods (OnApply, OnTick, OnRemove) that subclasses override for custom behavior. Added event hooks for damage/healing to enable reactive status effects. Utilized ToArray() when iterating effects to prevent collection modification errors.",
-            impact: "Designer could create and test new status effects in ~5 minutes without programmer intervention. ScriptableObject architecture enabled effect reuse across different abilities and enemies. System supported 6+ unique effects including Sleep, Poison, Hyper, Angel, and complex effects like 'remove on damage taken'. Performance remained stable with 4+ active effects per character thanks to ScriptableObject's memory efficiency.",
+            impact: "Designer could create and test new status effects in ~5 minutes without programmer intervention. ScriptableObject architecture enabled effect reuse across different abilities and enemies. System supported 6+ unique effects including Sleep, Poison, Hyper, Angel, and complex effects like 'remove on damage taken'. Performance remained stable with 4+ active effects per character via ScriptableObject's memory efficiency.",
             images: []
         },
         {
-            problem: "Ability execution needed to coordinate animations, VFX, damage calculation, and UI updates across multiple systems without creating tight coupling",
+            problem: "Ability execution coordinated with animations, VFX, damage calculation, and UI updates across multiple systems without creating tight coupling",
             solution: "Implemented event-driven architecture using C# Actions and delegates. Abilities invoke OnAbilityComplete callback when finished, allowing UI, turn manager, and resource systems to respond independently. Used null-conditional operator (?.) for safe event invocation. This decoupled ability logic from UI and game state management.",
             impact: "Enabled parallel work - UI programmer could implement action menu updates, VFX artist could hook animations, and designer could tune ability costs without blocking each other. Reduced cross-system dependencies and made debugging significantly easier as each system could be tested in isolation.",
             images: []
@@ -181,10 +178,6 @@ export const projectPromotionData: Project = {
         {
             title: "Designer Collaboration & Iteration",
             description: "Worked closely with the game designer in biweekly meetings to implement new abilities and status effects. Created data-driven workflows allowing the designer to prototype effects in the Unity Inspector without waiting for code changes."
-        },
-        {
-            title: "Integration & Polish",
-            description: "Integrated ability callbacks with UI systems, turn manager, and resource systems. Conducted extensive testing with other programmers to ensure smooth interactions between gameplay, combat flow, and UI systems. Fixed edge cases and added defensive programming for stability."
         }
     ],
     
@@ -210,7 +203,6 @@ export const projectPromotionData: Project = {
     ],
     futureGoals: [
         "Study advanced AI behavior trees for more sophisticated enemy patterns",
-        "Learn Unity's Job System and Burst compiler for combat performance optimization",
         "Explore procedural generation for dynamic level layouts",
         "Develop networking skills for multiplayer tactical RPGs"
     ],
