@@ -11,7 +11,14 @@ function App() {
             <section id="about" className="w-full h-screen flex items-center justify-center p-2">
                 <div className="flex flex-col px-2 text-center gap-3 md:w-2/3 w-full">
                     <h1 className="text-6xl">Joseph Miller<br/>Unity Game Developer</h1>
-                    <p>I build Unity games and develop websites as a full stack developer</p>
+                    <p>I build Unity games and develop <a
+                        href="https://joseph-miller-web.vercel.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline hover:opacity-80"
+                    >
+                        websites
+                    </a>{" "} as a full stack developer</p>
                     <div className="flex gap-2 self-center md:flex-row flex-col">
                         <Button className="hover:cursor-pointer text-lg py-6">
                             <Link to="/projects" className="flex items-center gap-1">
@@ -30,6 +37,9 @@ function App() {
                         </a>
                         <a className="h-8 w-8" href="https://www.linkedin.com/in/joseph-miller-326537261/" target="_blank" rel="noopener noreferrer">
                             <img src="/InBug-White.png" alt={"LinkedIn Icon"}/>
+                        </a>
+                        <a className="h-8 w-8" href="https://milljo.itch.io/" target="_blank" rel="noopener noreferrer">
+                            <img src="/itchio.svg" alt={"Itch.io Icon"}/>
                         </a>
                     </div>
                 </div>
